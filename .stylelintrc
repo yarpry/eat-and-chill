@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json.schemastore.org/stylelintrc",
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-standard-scss",
+    "stylelint-prettier/recommended"
+  ],
+  "ignoreFiles": [
+    "storybook-static/**/*",
+    "dist/**/*",
+    "coverage/**/*",
+    "src/pages/auth-svc/main/dist/**/*"
+  ],
+  "rules": {
+    "at-rule-no-unknown": null,
+    "scss/at-rule-no-unknown": null
+  }
+}

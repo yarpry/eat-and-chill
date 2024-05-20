@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+npm run tsc --noEmit && npm run lint && npm run prettier --check "**/*.{js,jsx,ts,tsx,css,scss}" && npm run stylelint "**/*.{css,scss}" && npm run test
