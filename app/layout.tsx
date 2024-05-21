@@ -1,7 +1,10 @@
+import "../public/css/mapsjs-ui.css";
 import "./globals.css";
 
 import { Inter } from "next/font/google";
 import type { Metadata } from "next";
+
+import HereMapScript from "@/app/components/scripts/HereMapScript";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,8 +19,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
-    </html>
+    <>
+      <html lang="en">
+        <body className={inter.className}>
+          {children}
+          <HereMapScript />
+        </body>
+      </html>
+    </>
   );
 }
