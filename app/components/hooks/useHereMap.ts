@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { changeStyle, styleChangeHandler, tapListener } from "@/utils/hereMapUtils";
+import { changeStyle, styleChangeHandler, tapListener } from "@/utils/hereMap";
 import { DEFAULT_NEW_MAP_SETTINGS } from "@/config/constants";
 import { MobileFacility } from "@/types/mobileFacility";
 

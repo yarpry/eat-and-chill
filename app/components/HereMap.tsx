@@ -1,8 +1,9 @@
 "use client";
 
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import { MobileFacility } from "@/types/mobileFacility";
+import { getOpenAICompletion } from "@/utils/openAi";
 import useHereMap from "@/app/components/hooks/useHereMap";
 
 type HereMapProps = {
@@ -10,6 +11,7 @@ type HereMapProps = {
 };
 
 const HereMap = ({ mobileFacilities }: HereMapProps) => {
+  const [openAiAdditional, setOpenAiAdditional] = useState("");
   const approvedMobileFacilities = useMemo(
     () => mobileFacilities.filter((facility) => facility.status === "APPROVED"),
     [mobileFacilities]
@@ -17,6 +19,18 @@ const HereMap = ({ mobileFacilities }: HereMapProps) => {
   const currentMobileFacility = useHereMap(approvedMobileFacilities);
 
   const { applicant, fooditems } = currentMobileFacility || {};
+
+  const getOpenAICompletionData = async (currentMobileFacility: MobileFacility) => {
+    setOpenAiAdditional("Loading...");
+    const openAiData = await getOpenAICompletion(currentMobileFacility);
+    setOpenAiAdditional(openAiData);
+  };
+
+  useEffect(() => {
+    if (currentMobileFacility) {
+      getOpenAICompletionData(currentMobileFacility);
+    }
+  }, [currentMobileFacility]);
 
   return (
     <div className="flex my-5">
@@ -28,7 +42,7 @@ const HereMap = ({ mobileFacilities }: HereMapProps) => {
         {(applicant || fooditems) ? (
           <div className="bg-black p-4 rounded shadow text-white">
             <h2 className="text-lg font-semibold">{applicant}</h2>
-            <p><strong>Food Items:</strong> {fooditems}</p>
+            <p className="mt-3"><strong>AI Recommendation:</strong> {openAiAdditional}</p>
           </div>
         ) : (
           <div className="bg-black p-4 rounded shadow text-white">
