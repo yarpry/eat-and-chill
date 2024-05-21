@@ -1,6 +1,36 @@
 # Eat and Chill
 
+[Eat and Chill](https://eat-and-chill.vercel.app/) is a modern web application that processes and summarizes data from food facilities using AI. It provides users with
+recommendations and detailed information about mobile food facilities approved by the city. The app also highlights the park green zones near the food points.
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+## Features
+
+- **Map Integration**: View mobile food facilities on a map.
+- **AI Recommendations**: Get AI-generated recommendations for selected food facilities.
+- **City-approved Facilities**: Only shows food trucks approved by the city.
+- **Real-time Data**: Fetches the latest data from the city’s database.
+- **Park Green Zones**: Highlights park green zones near the food points.
+
+## Trade-offs and Future Improvements
+
+Given the time constraints, there are a few areas that could be improved or expanded with more time:
+
+- **Add More Unit and E2E Tests**: Increasing the test coverage for both unit tests and end-to-end tests to ensure robust functionality.
+- **Add Storybook for Design System**: Integrate Storybook to develop and test UI components in isolation, improving the design process and component reuse.
+- **Debug Stream of OpenAI**: Refine the stream decoding process to handle data more cleanly and efficiently.
+- **Improve Error Handling and Logging**: Enhance the application’s error handling and logging mechanisms to make debugging and maintenance easier.
+- **Optimize Performance**: Profile and optimize the performance of the application, particularly in data fetching and rendering large datasets.
+- **Enhance UI/UX**: Work on the user interface and experience, adding more interactive and user-friendly features.
+- **Show Food Items Precisely**: Display food items more accurately for each location (fix overlap for the same coordinates).
+- **Add Different Icons for Food Truck and Food Cart**: Use distinct icons to differentiate between food trucks and food carts on the map.
+- **Improve Cluster Logic on Map**: Enhance the clustering logic on the map for better visualization and user experience.
+- **OpenAI**: Enhance prompts for OpenAI
+- **Filtering**: Add more filtering options based on specific properties
+- **Social**: Integrate with social network reviews and include images for each food item
+- **Google Analytics**: FB Pixel, etc
+- **Logs**: Sentry
 
 ## Prerequisites
 
@@ -67,7 +97,7 @@ To learn more about Next.js, take a look at the following resources:
 
 ## Deploy on Vercel
 
-This project is already deployed to Vercel.
+This project is already deployed to Vercel. <https://eat-and-chill.vercel.app/>
 
 Deployments can be triggered automatically by pushing new commits to the main branch.
 

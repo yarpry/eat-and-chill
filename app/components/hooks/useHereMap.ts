@@ -40,7 +40,9 @@ const useHereMap = (mobileFacilities: MobileFacility[]) => {
     window.addEventListener("resize", () => mapInstance.getViewPort().resize());
 
     new H.mapevents.Behavior(new H.mapevents.MapEvents(mapInstance));
-    new H.ui.UI.createDefault(mapInstance, defaultLayers);
+    const ui = new H.ui.UI.createDefault(mapInstance, defaultLayers);
+    const mapSettingsControl = ui.getControl("mapsettings");
+    mapSettingsControl.setVisibility(false);
 
     clusteredDataProvider.addEventListener("tap", (event: HereMapEvent) => tapListener(event, setCurrentMobileFacility));
 

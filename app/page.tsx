@@ -19,7 +19,8 @@ export default async function Home() {
             lg:w-auto lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30
           "
         >
-          Find your perfect lunch spot near park zones:
+          Find your perfect lunch spot near park zones. <br />
+          We only show city-approved food trucks.
         </p>
         <div
           className="
