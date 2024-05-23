@@ -31,6 +31,9 @@ Given the time constraints, there are a few areas that could be improved or expa
 - **Social**: Integrate with social network reviews and include images for each food item
 - **Google Analytics**: FB Pixel, etc
 - **Logs**: Sentry
+- **Console errors**: Eliminate hereMap mapInstance.dispose() error and warnings on localhost react strict
+- **Store management**: Think about add a redux or mobs store
+- **Location**: Add user geo targeting through browser API
 
 ## Prerequisites
 
